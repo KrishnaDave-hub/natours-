@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /*1 rem = 10px of the root font size  so will apply rem to size instead of px & in percent root font-size = 10px ==>> 10/16*/
+  // this defines what 1 rem is
+  // 1 rem = 10 px; 10px/16px = 62.5%
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    //width < 1200 ? 
+    //1 rem = 9px; 9px/16px = 56.25%
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    //width < 900 ?
+    // 1 rem = 8px; 8px/16px = 50%
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    //1 rem = 12px; 12px/16px = 75%
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding:3rem;
+
+  @include respond(tab-port) {
+    padding: 0 ;
+  }
+}
+
+  ::selection{
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
